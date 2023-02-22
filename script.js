@@ -27,7 +27,3 @@ range.addEventListener('input', () => {
 
 console.dir(square);
 console.dir(btn);
-
-
-
-
