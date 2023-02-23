@@ -11,6 +11,7 @@ const span = document.getElementById('range-span');
 const circle = document.getElementById('circle');
 
 e_btn.style.display = 'none';
+span.innerHTML = range.value + '%';
 
 const onClick = function () {
     text.textContent = text.value;
@@ -20,7 +21,6 @@ const onClick = function () {
 const rangeInput = function () {
     circle.style.width = range.value + '%';
     circle.style.height = range.value + '%';
-    span.innerHTML = range.value + '%';
 }
 
 btn.addEventListener('click', onClick);
