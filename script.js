@@ -7,23 +7,24 @@ const text = document.getElementById('text');
 const e_btn = document.getElementById('e_btn');
 
 const range = document.getElementById('range');
+const span = document.getElementById('range-span');
 const circle = document.getElementById('circle');
 
 e_btn.style.display = 'none';
 
-btn.addEventListener('click', () => {
-    const color = text.value;
-    text.textContent = color;
-    square.style.backgroundColor = color;
-});
+const onClick = function () {
+    text.textContent = text.value;
+    square.style.backgroundColor = text.value;
+}
 
-range.addEventListener('input', () => {
-    const value = range.value;
-    const percent = value + '%';
-    circle.style.width = percent;
-    circle.style.height = percent;
-    // console.log(`Width: ${circle.style.width}, Height: ${circle.style.height}`);
-});
+const rangeInput = function () {
+    circle.style.width = range.value + '%';
+    circle.style.height = range.value + '%';
+    span.innerHTML = range.value + '%';
+}
+
+btn.addEventListener('click', onClick);
+range.addEventListener('input', rangeInput);
 
 console.dir(square);
 console.dir(btn);
